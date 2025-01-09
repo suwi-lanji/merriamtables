@@ -1,0 +1,48 @@
+{
+  "name": "merriamtables",
+  "version": "1.0.0",
+  "description": "A dynamic shaddcn ui datatable generator",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
+    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/suwi-lanji/merriamtables"
+  },
+  "keywords": [
+    "Shadcn",
+    "UI",
+    "tables",
+    "open-source"
+  ],
+  "author": "Suwilanji Jack Chipofya",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^19.0.4",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-storybook": "^0.11.2",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.4.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}
