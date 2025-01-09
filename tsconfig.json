@@ -13,7 +13,10 @@
       "isolatedModules": true, // Ensures each file is treated as a separate module.
       "noEmit": true, // Prevents TypeScript from emitting output files.
       "jsx": "react-jsx", // Configures JSX support for React.
-  
+        "baseUrl": ".",
+        "paths": {
+        "@/*": ["./src/*"]
+        },
       /* Linting */
       "strict": true, // Enables strict type checking.
       "noUnusedLocals": true, // Flags unused local variables.
