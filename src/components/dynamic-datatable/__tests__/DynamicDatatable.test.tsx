@@ -1,8 +1,7 @@
-import React from "react";
-import { render, screen, fireEvent, within } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
 import DynamicDatatable from "../DynamicDatatable";
-import { ColumnDef, FilterField, Action } from "../../types/datatable";
+import { ColumnDef, FilterField, Action } from "../../../types/datatable";
 
 interface Product {
   id: number;
@@ -12,6 +11,7 @@ interface Product {
   stock: number;
   rating: number;
   image: string;
+  actions?: string;
 }
 
 const products: Product[] = [
