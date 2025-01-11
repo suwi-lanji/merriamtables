@@ -11,9 +11,19 @@
   ],
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
-    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && vite build"
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "test:ui": "vitest --ui",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run format"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,21 +38,54 @@
   "author": "Suwilanji Jack Chipofya",
   "license": "ISC",
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.3",
+    "@eslint/compat": "^1.2.4",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.17.0",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/test": "^8.4.7",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.5",
     "@types/react": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-storybook": "^0.11.2",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.0.0",
+    "lint-staged": "^15.3.0",
+    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
+    "storybook": "^8.4.7",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3",
     "vite": "^6.0.7",
-    "vite-plugin-dts": "^4.4.0"
+    "vite-plugin-dts": "^4.4.0",
+    "vitest": "^2.1.8"
   },
   "peerDependencies": {
     "react": "^19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-select": "^2.1.4",
+    "@radix-ui/react-slot": "^1.1.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
   }
 }
