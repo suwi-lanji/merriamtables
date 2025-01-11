@@ -1,5 +1,8 @@
 {
-  "name": "merriamtables",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@{USER_NAME}"
+  },
+  "name": "@suwi-lanj/merriamtables",
   "version": "1.0.0",
   "description": "A dynamic shaddcn ui datatable generator",
   "type": "module",
