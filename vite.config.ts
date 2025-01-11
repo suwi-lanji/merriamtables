@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
 import path from "path";
+
 export default defineConfig({
   build: {
     lib: {
@@ -20,7 +21,12 @@ export default defineConfig({
   plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"), // Sets up path aliases for imports.
     },
+  },
+  test: {
+    environment: "jsdom", // Use jsdom to simulate a browser environment for testing.
+    globals: true, // Enables global variables like `describe`, `it`, etc.
+    setupFiles: "./src/setupTests.ts", // Optional: Path to a setup file for global configurations.
   },
 });
