@@ -144,7 +144,7 @@ export default function DynamicDatatable<T extends { id: number | string }>({
   };
 
   const renderMobileCard = (item: T) => (
-    <Card key={`card-${item.id}`} className="mb-4">
+    <Card key={`card-${item.id}`} className="mb-4" role="card">
       <CardContent className="pt-4">
         {columns
           .filter((col) => col.showOnMobile !== false)
