@@ -1,0 +1,31 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as DynamicDatatable from "./DynamicDatatable.stories.tsx";
+
+<Meta of={DynamicDatatable} title="DynamicDatatable" />
+
+# DynamicDatatable
+
+DynamicDatatable component with different props.
+
+#### Example
+
+<Canvas of={DynamicDatatable.Primary} />
+
+## Usage
+
+```ts
+import {DynamicDatatable} from "sld-ui";
+
+const Example = () => {
+  return (
+      <DynamicDatatable
+        primary
+      />
+  );
+};
+
+export default Example;
+```
+
+#### Arguments

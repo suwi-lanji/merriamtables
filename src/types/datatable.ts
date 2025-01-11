@@ -34,4 +34,5 @@ export interface DatatableProps<T> {
   columns: ColumnDef<T>[];
   filterFields: FilterField<T>[];
   actions?: Action<T>[];
+  title: string;
 }

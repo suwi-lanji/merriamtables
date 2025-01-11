@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import {
   Table,
   TableBody,
@@ -24,12 +24,7 @@ import {
   ChevronRight,
   Menu,
 } from "lucide-react";
-import {
-  DatatableProps,
-  ColumnDef,
-  FilterField,
-  Action,
-} from "../types/datatable";
+import { DatatableProps, ColumnDef } from "../../types/datatable";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Sheet,
@@ -40,7 +35,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-export function DynamicDatatable<T extends { id: number | string }>({
+export default function DynamicDatatable<T extends { id: number | string }>({
   data,
   columns,
   filterFields,
@@ -51,7 +46,7 @@ export function DynamicDatatable<T extends { id: number | string }>({
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
   const [filters, setFilters] = useState<Partial<Record<keyof T, string>>>({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, _] = useState(10);
 
   const handleSort = (column: keyof T) => {
     if (column === sortColumn) {
